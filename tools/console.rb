@@ -12,7 +12,7 @@ poetry = Course.new("Poetry 101")
 # raise "Course.all did not return collection of instances of Course" unless Course.all.is_a?(Array) && Course.all.first.is_a?(Course)
 
 # raise "Course.find_by_subject(subject) did not return an instance of Course" unless Course.find_by_subject("European History").is_a?(Course)
-# raise "Course.find_by_subject(subject) did not return the correct restaurant" unless Course.find_by_subject("Poetry 101") == poetry
+# raise "Course.find_by_subject(subject) did not return the correct course" unless Course.find_by_subject("Poetry 101") == poetry
 
 # amy = Student.new("Amy", "Schumer")
 # jim = Student.new("Jim", "Carrey")
@@ -72,5 +72,13 @@ poetry = Course.new("Poetry 101")
 
 # raise "SchoolSupply.find_all_by_kind(kind) did not return a collection of SchoolSupply instances" unless SchoolSupply.find_all_by_kind("Pencil").is_a?(Array) && SchoolSupply.find_all_by_kind("Pencil").first.is_a?(SchoolSupply)
 # raise "SchoolSupply.find_all_by_kind(kind) did not return the correct collection of school_supplies" unless SchoolSupply.find_all_by_kind("Text Book").first == school_supply6 && SchoolSupply.find_all_by_kind("Pen").length == 2 && SchoolSupply.find_all_by_kind("Pen").include?(school_supply5) && SchoolSupply.find_all_by_kind("Pen").include?(school_supply2)
+
+# Course.new("Basic Math")
+# Course.new("European History")
+# Course.new("Ruby")
+
+# raise "Course.all_subjects should return a collection" unless Course.all_subjects.is_a?(Array)
+# raise "Course.all_subjects should return a collection of course subjects" unless Course.all_subjects.include?("Geometry") && Course.all_subjects.include?("European History") && Course.all_subjects.include?("Ruby")
+# raise "Course.all_subjects should not return duplicate subjects" unless Course.all_subjects.uniq == Course.all_subjects
 
 binding.pry
